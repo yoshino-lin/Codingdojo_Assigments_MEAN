@@ -23,7 +23,7 @@ owl.east = robin;
 robin.north = kanga;
 robin.south = pooh;
 robin.west = owl;
-robbin.east = rabbit;
+robin.east = rabbit;
 rabbit.west = robin;
 rabbit.south = bees;
 rabbit.east = gopher;
@@ -33,5 +33,48 @@ kanga.north = eeyore;
 eeyore.south = kanga;
 eeyore.east = heffalumps;
 heffalumps.west = eeyore;
+var player = {
+    location: tigger
+}
 
+function move(direction){
+    if(direction === "north"){
+        if(player["location"].north!=null){
+            player["location"]=player["location"].north
+            console.log("Now you are at "+player["location"]["character"]+"'s house")
+        }else{
+            console.log("You may not go that way")
+        }
+    }else if(direction === "south"){
+        if(player["location"].south!=null){
+            player["location"]=player["location"].south
+            console.log("Now you are at "+player["location"]["character"]+"'s house")
+        }else{
+            console.log("You may not go that way")
+        }
+    }else if(direction === "east"){
+        if(player["location"].east!=null){
+            player["location"]=player["location"].east
+            console.log("Now you are at "+player["location"]["character"]+"'s house")
+        }else{
+            console.log("You may not go that way")
+        }
+    }else if(direction === "west"){
+        if(player["location"].west!=null){
+            player["location"]=player["location"].west
+            console.log("Now you are at "+player["location"]["character"]+"'s house")
+        }else{
+            console.log("You may not go that way")
+        }
+    }else{
+        console.log("Nope,please try again")
+    }
+
+}
+move("north")
+move("north")
+move("east")
+move("east")
+move("east")
+move("west")
 //上n下s左w右e
