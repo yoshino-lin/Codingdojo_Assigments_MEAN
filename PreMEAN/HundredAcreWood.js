@@ -4,7 +4,7 @@ var tigger={
 };
 var pooh={
     character: "Winnie the Pooh",
-    greet: function(){console.log("Hi friend, try some fresh honey!")}
+    greet: function(){console.log("Hi friend, I am looking for more honey!")}
 };
 var piglet={
     character: "Piglet",
@@ -12,7 +12,7 @@ var piglet={
 };
 var bees={
     character: "Bees",
-    greet: function(){console.log("Ennnnnn! Do you see my honey?")}
+    greet: function(){console.log("Bzzzzzzz! Do you see my honey?")}
 };
 var owl={
     character: "Owl",
@@ -67,9 +67,10 @@ eeyore.south = kanga;
 eeyore.east = heffalumps;
 heffalumps.west = eeyore;
 var player = {
-    location: tigger
+    location: tigger,
+    carry_honey: false,
+    where_to_drop:""
 }
-
 function move(direction){
     if(direction === "north"){
         if(player["location"].north!=null){
@@ -106,12 +107,34 @@ function move(direction){
     }else{
         console.log("Nope,please try again")
     }
-
 }
-move("north")
-move("north")
-move("east")
-move("east")
-move("east")
-move("west")
+function pickUp(){
+    if(player["location"] == bees){
+        player["carry_honey"] = true;
+        console.log("You've gathered some honey!")
+    }else{
+        console.log("There is no honey at this location.")
+    }
+}
+function mission(){
+    if(player["where_to_drop"]==""){
+        let name_list = ["Tigger","Winnie the Pooh","Piglet","Owl","Christopher Robin","Rabbit","Gopher","Kanga","Eeyore","Heffalumps"]
+        let index = Math.floor(Math.random()*name_list.length)
+        player["where_to_drop"] = name_list[index]
+    }
+    console.log(player["where_to_drop"]+" is looking for honey! Can you help?")
+}
+function drop(){
+    if(player["carry_honey"] == true){
+        if(player["location"]["character"] === player["where_to_drop"]){
+            console.log("Congratulations! You delivered the honey to "+player["where_to_drop"]+"!")
+            player["carry_honey"] = false
+        }else{
+            console.log("Whoops! This isn't the place that needs the honey!")
+        }
+    }else{
+        console.log("You do not carry honey!")
+    }
+}
+mission()
 //上n下s左w右e
