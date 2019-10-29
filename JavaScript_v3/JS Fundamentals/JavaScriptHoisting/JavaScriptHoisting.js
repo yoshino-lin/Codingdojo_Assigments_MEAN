@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    var displayName;
     $("#info_button").click(function() {
         $.get("https://api.github.com/users/yudong", displayName)
         function displayName(data) {
