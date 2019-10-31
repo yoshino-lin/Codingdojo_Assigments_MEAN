@@ -2,9 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const server = http.createServer(function (request, response){
     console.log('client request URL: ', request.url);
-
     // this is how we do routing:
-    if(request.url === '/') {
+    if(request.url === '/cars') {
         fs.readFile('index.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});  // send data about response
             response.write(contents);  //  send response body
