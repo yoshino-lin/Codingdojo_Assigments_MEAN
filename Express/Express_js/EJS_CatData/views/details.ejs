@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+<p id="info_title">Details Page for <%= name %></p>
+<div>
+    <img src="/images/cat<%= id %>.jpg"/>
+</div>
+<p id="d1">Farvourite Food: <%= fa_food %></p>
+<p id="d2">Age: <%= age %></p>
+<div id="d3">
+    <p>Sleeping spots:</p>
+    <% for(var i=0;i<sleep_spot.length;i++){ %>
+        <p><%= sleep_spot[i] %></p>
+    <% } %>
+</div>
+</body>
+</html>

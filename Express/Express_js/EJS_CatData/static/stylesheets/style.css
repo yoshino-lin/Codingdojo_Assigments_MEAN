@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    padding: 10px;
+    background-color: #ba67c8;
+}
+div{
+    text-align: center;
+}
+img{
+    border-radius: 100px;
+    height: 200px;
+    width: 300px;
+}
+#info_title{
+    font-size: xx-large;
+    font-weight: bold;
+}
+#d1{
+    font-size: xx-large;
+    padding: 10px;
+    background-color: #ce93d9;
+}
+#d2{
+    font-size: xx-large;
+    padding: 10px;
+    background-color: #ba67c8;
+}
+#d3{
+    font-size: xx-large;
+    padding: 10px;
+    background-color: #9b28b0;
+    text-align: left;
+}
