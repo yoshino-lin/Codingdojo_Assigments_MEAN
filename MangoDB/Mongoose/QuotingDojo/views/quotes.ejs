@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+    <% for(var user of users){%>
+        <p>"<%= user.quote %>"</p>
+        <p class="blue">-<%= user.name %> at <%= date.format(user.createdAt, 'h:mm A MMMM D YYYY') %></p>
+    <% } %>
+</body>
+</html>
