@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1>Mongooses list:</h1>
+    <% for(var mongoose of mongooses){%>
+        <p>_id: "<%= mongoose._id %>"</p>
+        <p>Name: <%= mongoose.name %></p>
+    <% } %>
+</body>
+</html>

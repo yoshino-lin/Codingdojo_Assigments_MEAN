@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1>Update a mongoose!</h1>
+        <% for(var mongoose of mongooses){%>
+            <form action='/mongooses/<%= mongoose._id %>' method='post'>
+                Mongoose's name:<input type='text' name='newname' value='<%= mongoose.name %>'><br>
+                Mongoose's _id:<input type='text' name='newid' value='<%= mongoose._id %>'><br>
+                <button>Done</button>
+            </form>
+        <% } %>
+</body>
+</html>

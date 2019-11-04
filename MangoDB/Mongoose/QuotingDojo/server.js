@@ -25,7 +25,6 @@ app.post('/quotes', (req, res) => {
 });
 
 app.get('/quotes', (req, res) => {
-    User.update()
     User.find().sort({createdAt:-1})
         .then(data => res.render("quotes", {users: data}))
         .catch(err => res.json(err));

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <% for(var mongoose of mongooses){%>
+        <h1>Name: <%= mongoose.name %></h1>
+        <p>_id: <%= mongoose._id %></p>
+        <form action='/mongooses/destroy/<%= mongoose._id %>' method='post'>
+            <button>Delte this mongooses</button>
+        </form>
+    <% } %>
+</body>
+</html>
