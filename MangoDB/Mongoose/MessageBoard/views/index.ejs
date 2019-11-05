@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+    <h1>The Dojo Message Board</h1>
+    <form action='/newMessage' method='post'>
+        Name: <input type='text' name='name_post_message'><br>
+        Message: <input type='text' name='message_to_post'><br>
+        <button>Post a message</button>
+    </form>
+    <% for(var blog of blogs){%>
+        <p>id: <%= blog._id %></p>
+        <p>Name: <%= blog.creator %></p>
+        <p>Message: <%= blog.content %></p>
+        <% for(var post in blog.posts){%>
+            <p>Name: <%= blog.posts[post].creator %></p>
+            <p>Comment: <%= blog.posts[post].content %></p>
+        <% } %>
+        <form action='/newComment/<%= blog._id %>' method='post'>
+            Name: <input type='text' name='name_post_comment'><br>
+            Comment: <input type='text' name='comment_to_post'><br>
+            <button>Post a comment</button>
+        </form>
+    <% } %>
+</body>
+</html>
