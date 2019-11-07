@@ -7,11 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
     constructor(private _http: HttpClient){
         this.getPokemon();
+        this.getAbilities();
     }
     getPokemon(){
-        let tempObservable = this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
-        tempObservable.subscribe(data => function(){
-            
-        });
+        return this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
+    }
+    getAbilities(){
+        return this._http.get('https://pokeapi.co/api/v2/ability/overgrow');
     }
 }
