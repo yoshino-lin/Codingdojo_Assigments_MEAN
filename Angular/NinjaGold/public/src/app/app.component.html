@@ -9,7 +9,7 @@
     <p *ngFor="let event of events.reverse()">{{event}}</p>
     <button (click)="createAccount()">New Player!</button>
     <button (click)="loadGame()">Load!</button>
-    <button (click)="saveGame()">Save!</button>
+    <button (click)="saveGame(gold_amount)">Save!</button>
     <button (click)="reset()">New game!</button>
 </div>
 <router-outlet></router-outlet>

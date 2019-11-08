@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
         this.gold_amount+=amount
         if(amount>0){
             this.events.push("You've earned "+amount+" gold at the casino")
-        }else if(amount=0){
+        }else if(amount==0){
             this.events.push("You've earned nothing at the casino")
         }else{
             amount=0-amount
@@ -69,8 +69,8 @@ export class AppComponent implements OnInit {
             this.gold_amount = data[0]["gold"]
         });
     }
-    saveGame(){
-        let observable = this._httpService.changeGold(10000);
+    saveGame(amount_gold:number): void{
+        let observable = this._httpService.changeGold(amount_gold);
         console.log("succeed")
     }
     createAccount(){
