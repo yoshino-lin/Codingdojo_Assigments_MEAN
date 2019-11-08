@@ -20,9 +20,7 @@ export class AppComponent implements OnInit {
         this.gold_amount+=amount
         this.events.push("You've earned "+amount+" gold at the farm")
         if(this.events.length>5){
-            this.events.reverse()
-            this.events.pop()
-            this.events.reverse()
+            this.events.shift()
         }
     }
     cave(){
@@ -30,9 +28,7 @@ export class AppComponent implements OnInit {
         this.gold_amount+=amount
         this.events.push("You've earned "+amount+" gold at the cave")
         if(this.events.length>5){
-            this.events.reverse()
-            this.events.pop()
-            this.events.reverse()
+            this.events.shift()
         }
     }
     casino(){
@@ -47,9 +43,7 @@ export class AppComponent implements OnInit {
             this.events.push("You've lost "+amount+" gold at the casino")
         }
         if(this.events.length>5){
-            this.events.reverse()
-            this.events.pop()
-            this.events.reverse()
+            this.events.shift()
         }
     }
     house(){
@@ -57,9 +51,7 @@ export class AppComponent implements OnInit {
         this.gold_amount+=amount
         this.events.push("You've earned "+amount+" gold at the house")
         if(this.events.length>5){
-            this.events.reverse()
-            this.events.pop()
-            this.events.reverse()
+            this.events.shift()
         }
     }
     loadGame(){
@@ -70,7 +62,7 @@ export class AppComponent implements OnInit {
         });
     }
     saveGame(amount_gold:number): void{
-        let observable = this._httpService.changeGold(amount_gold);
+        let observable = this._httpService.changeGold();
         console.log("succeed")
     }
     createAccount(){

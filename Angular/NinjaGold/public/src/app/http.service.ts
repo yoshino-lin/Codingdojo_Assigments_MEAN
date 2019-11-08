@@ -9,8 +9,8 @@ export class HttpService {
     loadData(){
         return this._http.get('/gold');
     }
-    changeGold(amount){
-        this._http.post('/gold/'+amount);
+    changeGold(){
+        //this._http.post('/gold/'+amount);
     }
     createData(){
         this._http.get('/new')
