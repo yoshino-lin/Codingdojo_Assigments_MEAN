@@ -16,8 +16,8 @@ module.exports = {
     },
     createTask: function(req,res){
         const newuser = new User();
-        newuser.title = req.params.name
-        newuser.description = ""
+        newuser.title = req.params.title
+        newuser.description = req.params.description
         newuser.completed = false
         newuser.save()
             .then(data => res.json(data))
@@ -26,8 +26,8 @@ module.exports = {
     updateTask: function(req,res){
         User.findOne({_id: req.params.id})
             .then(user => {
+                user.title = req.params.title
                 user.description = req.params.description
-                user.completed = req.params.completed
                 return user.save()
             })
             .then(user => res.json(user))

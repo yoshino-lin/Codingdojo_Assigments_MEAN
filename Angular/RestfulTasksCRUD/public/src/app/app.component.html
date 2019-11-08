@@ -1,12 +1,22 @@
-<div id="big">
-    <h1>Restful Tasks API</h1>
-    <div id="alltask">
-    <button (click)="onButtonClickEvent()" id="showall">GET ALL TASKS!</button>
-        <p *ngFor="let obj of data_out">{{obj.title}}<button (click)="showInfo(obj._id)" id="show">Show</button></p>
-    </div>
-    <div *ngIf="title!=null" id="infodisplay">
-        <p>{{title}}</p>
-        <p>{{des}}</p>
-    </div>
+<h1>New Task</h1>
+<form (submit)="onSubmit()">
+    <p>Title: <input type="text" name="title" [(ngModel)]="newTask.title"/></p>
+    <p>Description: <input type="text" name="description" [(ngModel)]="newTask.description"/>
+    <input type="submit" value="Create" id="create"/></p>
+</form>
+<h1>Task List</h1>
+<div *ngFor="let obj of data_out" class="each_task">
+    <h2>{{obj.title}}</h2>
+    <p>{{obj.description}}</p>
+    <button (click)="getTaskInfo(obj._id)">Edit!</button>
+    <button (click)="deleteTask(obj._id)">Delete!</button>
+</div>
+<div *ngIf="data_edit!=null">
+    <h1>Edit a task</h1>
+    <form>
+        <p>Title:<input type="text" name="title" [(ngModel)]="task_to_update.title"/></p>
+        <p>Description:<input type="text" name="description" [(ngModel)]="task_to_update.description"/></p>
+        <input (click)="updateTask(data_edit._id)" type="submit" value="Edit"/>
+    </form>
 </div>
 <router-outlet></router-outlet>

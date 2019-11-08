@@ -11,7 +11,16 @@ export class HttpService {
     getUsers(){
         return this._http.get('/api');
     }
-    getOneUser(id){
+    addTask(newtask){
+        return this._http.post('/api/'+newtask.title+"/"+newtask.description)
+    }
+    updateOne(id,newtask){
+        return this._http.put('/api/'+id+"/"+newtask.title+"/"+newtask.description)
+    }
+    removeTheTask(id){
+        return this._http.delete('/api/'+id);
+    }
+    getOneTask(id){
         return this._http.get('/api/'+id);
     }
 }
