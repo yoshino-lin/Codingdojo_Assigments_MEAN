@@ -12,7 +12,7 @@ export class HttpService {
     getPokemon(){
         return this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
     }
-    getAbilities(){
-        return this._http.get('https://pokeapi.co/api/v2/ability/overgrow');
+    getAbilities(ability){
+        return this._http.get('https://pokeapi.co/api/v2/ability/'+ability);
     }
 }
