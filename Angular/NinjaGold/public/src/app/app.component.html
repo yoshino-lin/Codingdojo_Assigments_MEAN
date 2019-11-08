@@ -1,0 +1,15 @@
+<div id="big">
+    <h1>Gold Count:{{gold_amount}}</h1>
+    <div id="c1">
+        <button (click)="farm()" id="showall">Farm!</button>
+        <button (click)="cave()" id="showall">Cave!</button>
+        <button (click)="casino()" id="showall">Casino!</button>
+        <button (click)="house()" id="showall">House!</button>
+    </div>
+    <p *ngFor="let event of events.reverse()">{{event}}</p>
+    <button (click)="createAccount()">New Player!</button>
+    <button (click)="loadGame()">Load!</button>
+    <button (click)="saveGame()">Save!</button>
+    <button (click)="reset()">New game!</button>
+</div>
+<router-outlet></router-outlet>
