@@ -1,0 +1,9 @@
+<div id="big">
+    <h1>Restful Tasks API</h1>
+    <div id="alltask">
+    <button (click)="onButtonClickEvent()" id="showall">GET ALL TASKS!</button>
+        <p *ngFor="let task of data">{{task.title}}<button (click)="taskToShow(task)" id="show">Show</button></p>
+    </div>
+    <app-task *ngIf="data_out" [taskToShow]="data_out"></app-task>
+</div>
+<router-outlet></router-outlet>
