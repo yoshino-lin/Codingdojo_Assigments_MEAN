@@ -1,0 +1,12 @@
+<div id="big">
+    <h1>Restful Tasks API</h1>
+    <div id="alltask">
+    <button (click)="onButtonClickEvent()" id="showall">GET ALL TASKS!</button>
+        <p *ngFor="let obj of data_out">{{obj.title}}<button (click)="showInfo(obj._id)" id="show">Show</button></p>
+    </div>
+    <div *ngIf="title!=null" id="infodisplay">
+        <p>{{title}}</p>
+        <p>{{des}}</p>
+    </div>
+</div>
+<router-outlet></router-outlet>
