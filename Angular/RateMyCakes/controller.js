@@ -22,8 +22,8 @@ module.exports = {
     },
     createOneCake: function(req,res){
         const newcake = new Cake();
-        newcake.baker = req.params.name
-        newcake.img_url = req.params.url
+        newcake.baker = req.body.baker
+        newcake.img_url = req.body.img_url
         newcake.save()
             .then(data => res.json(data))
             .catch(err => res.json(err))

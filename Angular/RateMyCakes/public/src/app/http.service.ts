@@ -7,6 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
     constructor(private _http: HttpClient){}
     addCake(newCake){
-        return this._http.post('/api/'+newCake.baker+"/"+newCake.img_url)
+        return this._http.post('/api/createAcake',newCake)
     }
 }
