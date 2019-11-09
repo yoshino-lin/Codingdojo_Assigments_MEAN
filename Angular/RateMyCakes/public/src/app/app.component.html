@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+    <div id="big">
+        <h1>Rate My Cakes</h1>
+        <div>
+            <p>Submit a cake to be rated</p>
+            <form>
+                <p>Baker name:</p><input type="text" name="baker" [(ngModel)]="newCake.baker"/>
+                <p>Image url:</p><input type="text" name="img_url" [(ngModel)]="newCake.img_url"/>
+                <input (click)="createCake()" type="submit" value="SUBMIT"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<router-outlet></router-outlet>
