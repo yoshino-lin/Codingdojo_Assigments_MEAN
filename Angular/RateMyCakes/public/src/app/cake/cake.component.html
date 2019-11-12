@@ -1,1 +1,9 @@
-<p>cake works!</p>
+<div *ngIf="theCake">
+    <h1>Backed by {{theCake.baker}}</h1>
+    <p *ngIf="avg">Average rating: {{avg}} stars</p>
+    <img src="{{theCake.img_url}}"/>
+    <div *ngFor="let comment of theCake.comment">
+        <p>{{comment.content}}</p>
+        <p>{{comment.star}} stars</p>
+    </div>
+</div>

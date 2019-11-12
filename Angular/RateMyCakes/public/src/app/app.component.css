@@ -1,21 +1,21 @@
-*{
-    text-align: center;
+img{
+    width: 100px;
+    height: 100px;
 }
-#big{
-    border: 5px solid orange;
+#submit_box{
+
+    display: inline-block;
+    border: 2px solid black;
+    padding: 20px;
 }
-#alltask{
-    margin: 30px;
-    border: 5px solid blue;
+
+#cakes_rate{
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    display: inline-block;
+    margin-left: 50px;
 }
-#show{
-    color: white;
-    background-color: #2c9687;
-    border-radius: 50px;
-    width: 50px;
-    height: 50px;
-}
-#showall{
-    color: white;
-    background-color: #9c28b0;
+.each_cake{
+    margin-bottom: 20px;
 }

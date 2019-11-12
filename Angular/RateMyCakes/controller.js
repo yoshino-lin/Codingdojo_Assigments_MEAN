@@ -16,6 +16,7 @@ module.exports = {
             .catch(err => res.json(err))
     },
     displayTheBaker: function(req,res){
+        console.log(req.params.name)
         Cake.findOne({baker:req.params.name})
             .then(data => res.json(data))
             .catch(err => res.json(err))
@@ -32,7 +33,7 @@ module.exports = {
         const newcomment = new Comment();
         newcomment.star = req.params.star
         newcomment.content = req.params.content
-        newuser.save()
+        newcomment.save()
             .then(data => Cake.updateOne({_id: req.params.id}, {$push: {comment: data}}))
             .then(data => res.json(data))
             .catch(err => res.json(err))
