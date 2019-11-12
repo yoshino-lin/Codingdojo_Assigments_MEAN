@@ -15,7 +15,7 @@ export class HttpService {
         return this._http.get('/api')
     }
     addComment(id,comment){
-        return this._http.post('/api/'+id+'/'+comment.star+'/'+comment.content)
+        return this._http.post('/api/'+id+'/'+comment.star+'/'+comment.content, comment)
     }
     findThatCake(id){
         return this._http.get('/api/'+id)
