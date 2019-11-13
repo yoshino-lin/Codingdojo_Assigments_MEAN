@@ -8,10 +8,5 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
     constructor(private _httpService: HttpService){}
-    ngOnInit(){
-        let observable = this._httpService.getWeather();
-        observable.subscribe(data => {
-            this.all_cakes = data
-        });
-    }
+    ngOnInit(){}
 }

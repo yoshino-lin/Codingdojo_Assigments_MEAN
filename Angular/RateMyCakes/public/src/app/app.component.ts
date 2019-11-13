@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
     createCake(){
         let observable = this._httpService.addCake(this.newCake);
         observable.subscribe(data => {
+            console.log(data)
             this.newCake = { baker: "", img_url: "" }
             this.getAllCakes()
         });
