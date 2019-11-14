@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
+import { ErroComponent } from './erro/erro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewComponent,
     EditComponent,
-    HomeComponent
+    HomeComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,
