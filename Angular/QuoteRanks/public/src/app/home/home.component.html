@@ -1,0 +1,18 @@
+<div *ngIf="all_authors_data_dic">
+    <button [routerLink]="['/new']">Add an quotable author</button>
+    <p>We have quotes by:</p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Actions avaliable</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let each_author of all_authors_data_dic">
+            <td>{{each_author.name}}</td>
+            <td><button [routerLink]="['/edit/'+each_author._id]">Edit</button><button (click)="deleteTheUser(each_author._id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

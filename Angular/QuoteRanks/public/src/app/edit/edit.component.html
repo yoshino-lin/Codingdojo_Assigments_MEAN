@@ -1,0 +1,10 @@
+<button (click)="goHome()">home</button>
+<p>Edit this author:</p>
+<form>
+    <p>Name:</p>
+    {{ name.errors | json }}
+    <input type="text" name="newAuthorName" [(ngModel)]="newAuthorName.name" required minlength="3" #name="ngModel" value="{{newAuthorName.name}}"/><br />
+    <p *ngIf="erroMessage">{{erroMessage}}<p>
+    <input (click)="goHome()" type="submit" value="Cancel"/>
+    <input (click)="updateAuthor()" type="submit" value="Submit"/>
+</form>
