@@ -5,10 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-    constructor(private _http: HttpClient){
-        this.getWeather()
-    }
-    getWeather(location){
-        return this._http.get("https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b1b15e88fa797225412429c1c50c122a1");
+    constructor(private _http: HttpClient){}
+    getWeather(location:string){
+        return this._http.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=bb50c9e8a8d074e18194bda4b7f700fc`);
     }
 }
