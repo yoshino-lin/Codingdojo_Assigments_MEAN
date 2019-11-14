@@ -10,7 +10,7 @@ const routes: Routes = [
     // redirect to /alpha if there is nothing in the url
     { path: '', component: HomeComponent },
     // the ** will catch anything that did not match any of the above routes
-    { path: '**', component: HomeComponent }
+    { path: '*', pathMatch: 'full', redirectTo: '/' }
 ];
 
 @NgModule({

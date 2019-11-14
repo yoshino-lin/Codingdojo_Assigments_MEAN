@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
     getName(){
         let observable = this._httpService.findThatAuthorName(this.id);
         observable.subscribe(data => {
-            this.newAuthorName.name = data.name
+            this.newAuthorName.name = data["name"]
         });
     }
 }
