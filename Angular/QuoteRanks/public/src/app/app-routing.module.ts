@@ -4,10 +4,14 @@ import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
 import { ErroComponent } from './erro/erro.component';
+import { QuotesComponent } from './quotes/quotes.component';
+import { WriteComponent } from './write/write.component';
 
 const routes: Routes = [
     { path: 'new', component: NewComponent },
     { path: 'edit/:id', component: EditComponent },
+    { path: 'quotes/:id', component: QuotesComponent },
+    { path: 'write/:id', component: WriteComponent },
     { path: 'erro', component: ErroComponent },
     // redirect to /alpha if there is nothing in the url
     { path: '', component: HomeComponent },

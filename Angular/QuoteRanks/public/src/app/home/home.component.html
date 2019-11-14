@@ -11,7 +11,7 @@
         <tbody>
             <tr *ngFor="let each_author of all_authors_data_dic">
             <td>{{each_author.name}}</td>
-            <td><button [routerLink]="['/edit/'+each_author._id]">Edit</button><button (click)="deleteTheUser(each_author._id)">Delete</button></td>
+            <td><button [routerLink]="['/quotes/'+each_author._id]">View quotes</button><button [routerLink]="['/edit/'+each_author._id]">Edit</button><button (click)="deleteTheUser(each_author._id)">Delete</button></td>
             </tr>
         </tbody>
     </table>

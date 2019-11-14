@@ -19,6 +19,18 @@ export class HttpService {
         return this._http.put(`/api/${id}/${name}`, name)
     }
     findThatAuthorName(id){
-        return this._http.get(`/api/${id}`)    
+        return this._http.get(`/api/${id}`)
+    }
+    newQuotes(id,content){
+        return this._http.post(`/quotes/${id}/${content}`, content)
+    }
+    increaseVote(author_uid,quotes_id){
+        return this._http.put(`/quotes/up/${author_uid}/${quotes_id}`)
+    }
+    decreaseVote(author_uid,quotes_id){
+        return this._http.put(`/quotes/down/${author_uid}/${quotes_id}`)
+    }
+    deleteVote(author_uid,quotes_id){
+        return this._http.delete(`/quotes/${author_uid}/${quotes_id}`)
     }
 }

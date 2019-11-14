@@ -9,6 +9,8 @@ import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
 import { ErroComponent } from './erro/erro.component';
+import { QuotesComponent } from './quotes/quotes.component';
+import { WriteComponent } from './write/write.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ErroComponent } from './erro/erro.component';
     NewComponent,
     EditComponent,
     HomeComponent,
-    ErroComponent
+    ErroComponent,
+    QuotesComponent,
+    WriteComponent
   ],
   imports: [
     BrowserModule,

@@ -9,9 +9,9 @@ module.exports = app => {
     app.delete('/api/:id', controller.deleteTheAuthor);
 
     app.post('/quotes/:id/:content', controller.createOneQuote);
-    app.put('/quotes/up/:id', controller.VoteUpOneQuote);
-    app.put('/quotes/down/:id', controller.VoteDownOneQuote);
-    app.delete('/api/:id', controller.deleteTheQuote);
+    app.put('/quotes/up/:aid/:qid', controller.VoteUpOneQuote);
+    app.put('/quotes/down/:aid/:qid', controller.VoteDownOneQuote);
+    app.delete('/quotes/:aid/:qid', controller.deleteTheQuote);
 
     app.all("*", (req,res,next) => {
       res.sendFile(path.resolve("./public/dist/public/index.html"))

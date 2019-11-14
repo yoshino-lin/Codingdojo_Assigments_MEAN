@@ -36,7 +36,7 @@ module.exports = {
             .catch(err => res.json(err))
     },
     createOneQuote: function(req,res){
-        const newQuotes = new Quotes()
+        const newQuotes = new Quote()
         newQuotes.content = req.params.content
         newQuotes.vote = 0
         newQuotes.save()
@@ -45,25 +45,31 @@ module.exports = {
             .catch(err => res.json(err))
     },
     VoteUpOneQuote: function(req,res){
-        Quotes.findOne({_id:req.params.id})
-            .then(quotes => {
-                quotes.vote++
-                return quotes.save();
+        Author.findOne({_id:req.params.aid})
+            .then(data => {
+                for(var each_quote of data["quote"]){
+                    if(each_quote["_id"]==req.params.qid)
+                        each_quote["vote"]++
+                }
+                return data.save()
             })
             .then(data => res.json(data))
             .catch(err => res.json(err))
     },
     VoteDownOneQuote: function(req,res){
-        Quotes.findOne({_id:req.params.id})
-            .then(quotes => {
-                quotes.vote--
-                return quotes.save();
+        Author.findOne({_id:req.params.aid})
+            .then(data => {
+                for(var each_quote of data["quote"]){
+                    if(each_quote["_id"]==req.params.qid)
+                        each_quote["vote"]--
+                }
+                return data.save()
             })
             .then(data => res.json(data))
             .catch(err => res.json(err))
     },
     deleteTheQuote: function(req,res){
-        Quotes.remove({_id:req.params.id})
+        Quote.remove({_id:req.params.id})
             .then(data => res.json(data))
             .catch(err => res.json(err))
     }

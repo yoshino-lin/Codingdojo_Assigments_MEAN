@@ -1,0 +1,10 @@
+<button [routerLink]="['/']">Home</button>
+<p>Provide a quote by {{author_data.name}}:</p>
+<form>
+    <p>Quote:</p>
+    {{ name.errors | json }}
+    <input type="text" name="newQuoteContent" [(ngModel)]="newQuoteContent.content" required minlength="3" #name="ngModel"/><br />
+    <p *ngIf="erroMessage">{{erroMessage}}<p>
+    <button [routerLink]="['/quotes/'+id]">Cancel</button>
+    <input (click)="createQuote()" type="submit" value="Submit"/>
+</form>
