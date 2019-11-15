@@ -10,7 +10,7 @@ export class HttpService {
         return this._http.get('/api')
     }
     newAuthor(name){
-        return this._http.post(`/api/${name}`, name)
+        return this._http.post(`/api/newAuthor`, name)
     }
     removeAuthor(id){
         return this._http.delete(`/api/${id}`)
