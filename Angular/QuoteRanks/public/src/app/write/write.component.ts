@@ -37,7 +37,7 @@ export class WriteComponent implements OnInit {
       });
   }
   createQuote(){
-      let observable = this._httpService.newQuotes(this.id,this.newQuoteContent.content);
+      let observable = this._httpService.newQuotes(this.id,this.newQuoteContent);
       observable.subscribe(data => {
           if(data["errors"]){
               this.erroMessage = data["errors"]["content"]["message"]

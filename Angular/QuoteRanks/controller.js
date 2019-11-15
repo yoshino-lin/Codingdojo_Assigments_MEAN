@@ -37,7 +37,7 @@ module.exports = {
     },
     createOneQuote: function(req,res){
         const newQuotes = new Quote()
-        newQuotes.content = req.params.content
+        newQuotes.content = req.body.content
         newQuotes.vote = 0
         newQuotes.save()
             .then(data => Author.updateOne({_id: req.params.id}, {$push: {quote: data}}))

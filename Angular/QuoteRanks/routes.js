@@ -8,7 +8,7 @@ module.exports = app => {
     app.put('/api/:id/:name', controller.updateTheAuthor);
     app.delete('/api/:id', controller.deleteTheAuthor);
 
-    app.post('/quotes/:id/:content', controller.createOneQuote);
+    app.post('/quotes/:id', controller.createOneQuote);
     app.put('/quotes/up/:aid/:qid', controller.VoteUpOneQuote);
     app.put('/quotes/down/:aid/:qid', controller.VoteDownOneQuote);
     app.delete('/quotes/:aid/:qid', controller.deleteTheQuote);
