@@ -19,6 +19,7 @@ export class WriteComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+      this.author_data={name:""}
       this._route.params.subscribe((params: Params) => {
           this.id = params['id']
       });
@@ -39,7 +40,7 @@ export class WriteComponent implements OnInit {
       let observable = this._httpService.newQuotes(this.id,this.newQuoteContent.content);
       observable.subscribe(data => {
           if(data["errors"]){
-              this.erroMessage = data["errors"]["name"]["message"]
+              this.erroMessage = data["errors"]["content"]["message"]
           }else{
               this._router.navigate(['/quotes/'+this.id]);
           }

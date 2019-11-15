@@ -69,7 +69,15 @@ module.exports = {
             .catch(err => res.json(err))
     },
     deleteTheQuote: function(req,res){
-        Quote.remove({_id:req.params.id})
+        Author.findOne({_id: req.params.aid})
+            .then(data => {
+                for(var each_quote of data["quote"]){
+                    if(each_quote["_id"]==req.params.qid){
+                        return each_quote
+                    }
+                }
+            })
+            .then(data => Author.updateOne({_id: req.params.aid}, {$pull: {quote: data}}))
             .then(data => res.json(data))
             .catch(err => res.json(err))
     }

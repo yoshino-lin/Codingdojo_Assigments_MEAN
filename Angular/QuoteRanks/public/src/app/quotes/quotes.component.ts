@@ -29,7 +29,6 @@ export class QuotesComponent implements OnInit {
           if(data["name"]=="CastError"){
               this._router.navigate(['/erro']);
           }else{
-               console.log(data)
               this.author_data = data
           }
       });
