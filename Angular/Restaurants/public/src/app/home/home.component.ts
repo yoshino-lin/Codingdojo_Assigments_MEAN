@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
         var time_now = new Date()
         var time_create = new Date(createdAt)
         var time_dif = time_now.getTime() - time_create.getTime()
-        if(time_dif>30000){
+        if(time_dif<30000){
             return true
         }else{
             return false

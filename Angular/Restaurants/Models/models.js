@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const QuoteSchema = new mongoose.Schema({
-    customer:{type: String, required: [true, "A name is required"], minlength: [3, "A name must contain at least three characters."],unique: true},
+    customer:{type: String, required: [true, "A name is required"], minlength: [3, "A name must contain at least three characters."]},
     star: {type: Number, required: true},
     description: {type: String, required: [true, "A quote is required"], minlength: [3, "A quote must contain at least three characters."]},
 }, {timestamps: true})

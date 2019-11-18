@@ -53,7 +53,7 @@ module.exports = {
     },
     nameChecker: function(req,res){
         Restaurant.find({name:req.params.name})
-            .then(data => res.json("nogood"))
-            .catch(err => res.json("good"))
+            .then(data => res.json(data))
+            .catch(err => res.json(err))
     },
 }
