@@ -1,0 +1,17 @@
+<p>Write a review for {{theRestaurant.name}}:</p>
+<form class="box">
+    <p>Your name:<input type="text" name="newQuoteContent.customer" [(ngModel)]="newQuoteContent.customer" required minlength="3" #name="ngModel"/><p>
+    <p *ngIf="erroMessage.customer" class="warning">{{erroMessage.customer.message}}</p>
+    <select [(ngModel)]="newQuoteContent.star" name="star">
+        <option value="1">1 star</option>
+        <option value="2">2 stars</option>
+        <option value="3">3 stars</option>
+        <option value="4">4 stars</option>
+        <option value="5">5 stars</option>
+    </select>
+    <p>Your review:<input type="text" name="newQuoteContent.description" [(ngModel)]="newQuoteContent.description" required minlength="3" #name="ngModel"/><p>
+    <p *ngIf="erroMessage.description" class="warning">{{erroMessage.description.message}}</p>
+
+    <button [routerLink]="['/restaurants/'+id]">Cancel</button>
+    <input (click)="createQuote()" type="submit" value="Submit"/>
+</form>

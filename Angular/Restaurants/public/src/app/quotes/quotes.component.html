@@ -1,0 +1,18 @@
+<button [routerLink]="['/restaurants/'+id+'/review']">New review</button>
+<p>Review for {{theRestaurant.name}}:</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th scope="col">Customer</th>
+        <th scope="col">Stars</th>
+        <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let each_quote of theRestaurant_quote">
+        <td>{{each_quote.customer}}</td>
+        <td>{{each_quote.star}}</td>
+        <td>{{each_quote.description}}</td>
+        </tr>
+    </tbody>
+</table>

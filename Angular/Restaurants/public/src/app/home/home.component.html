@@ -1,0 +1,22 @@
+<button [routerLink]="['/restaurants/new']">New restaurant</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th scope="col">Author</th>
+        <th scope="col">Author</th>
+        <th scope="col">Actions avaliable</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let each_restaurant of all_restaurants_data_dic">
+            <td>{{each_restaurant.name}}</td>
+            <td>{{each_restaurant.cuisine}}</td>
+            <td>
+                <button [routerLink]="['/restaurants/'+each_restaurant._id]">Read reviews</button>
+                <button (click)="editTheRestaurant(each_restaurant._id)">Update</button>
+                <button *ngIf="timecount(each_restaurant.createdAt)==true" (click)="deleteTheRestaurant(each_restaurant._id)">Delete</button>
+            </td>
+            </tr>
+    </tbody>
+</table>
+<app-edit *ngIf="restaurant_edit_id" [uid]="restaurant_edit_id" (aTaskEventEmitter)="dataFromChild()"></app-edit>

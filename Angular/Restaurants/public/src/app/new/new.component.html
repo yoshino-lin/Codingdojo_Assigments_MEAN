@@ -1,0 +1,14 @@
+<h4>Register a restaurant:</h4>
+<form>
+    <div class ="box">
+        <p>Restaurant name:</p>
+        <input type="text" name="newRestaurant.name" [(ngModel)]="newRestaurant.name" required minlength="3" #name="ngModel"/><br />
+        <p *ngIf="erroMessage.name" class="warning">{{erroMessage.name.message}}<p>
+        <p>Cuisine:</p>
+        <input type="text" name="newRestaurant.cuisine" [(ngModel)]="newRestaurant.cuisine" required minlength="3" #name="ngModel"/><br />
+        <p *ngIf="erroMessage.cuisine" class="warning">{{erroMessage.cuisine.message}}<p>
+
+        <input (click)="goHome()" type="submit" value="Cancel"/>
+        <input (click)="createRestaurant()" type="submit" value="Submit"/>
+    </div>
+</form>

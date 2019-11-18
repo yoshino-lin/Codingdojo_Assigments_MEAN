@@ -1,0 +1,12 @@
+<p>Edit a restaurant:</p>
+<form>
+    <p>Restaurant name:</p>
+    <input type="text" name="newRestaurant.name" [(ngModel)]="newRestaurant.name" required minlength="3" #name="ngModel" value="{{newRestaurant.name}}"/><br />
+    <p *ngIf="erroMessage.name">{{erroMessage.name.message}}<p>
+    <p>Cuisine:</p>
+    <input type="text" name="newRestaurant.cuisine" [(ngModel)]="newRestaurant.cuisine" required minlength="3" #name="ngModel" value="{{newRestaurant.cuisine}}"/><br />
+    <p *ngIf="erroMessage.cuisine">{{erroMessage.cuisine.message}}<p>
+
+    <input (click)="triggerEvent($event)" type="submit" value="Cancel"/>
+    <input (click)="updateRestaurant()" type="submit" value="Submit"/>
+</form>
