@@ -1,0 +1,19 @@
+{
+  "name": "Commerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "controller.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.9",
+    "mongoose-unique-validator": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

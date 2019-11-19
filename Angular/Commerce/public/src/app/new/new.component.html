@@ -1,0 +1,15 @@
+<form>
+    <div class ="box">
+        <h4>New Product</h4>
+        <p *ngIf="erroMessage.name" class="warning">{{erroMessage.name.message}}</p>
+        <p *ngIf="erroMessage.qty" class="warning">{{erroMessage.qty.message}}</p>
+        <p *ngIf="erroMessage.price" class="warning">{{erroMessage.price.message}}</p>
+
+        <p>Name:<input type="text" name="newProduct.name" [(ngModel)]="newProduct.name" required minlength="3" #name="ngModel"/></p><br />
+        <p>Qty:<input type="text" name="newProduct.qty" [(ngModel)]="newProduct.qty" required min="0" #name="ngModel"/></p><br />
+        <p>Price:$<input type="text" name="newProduct.price" [(ngModel)]="newProduct.price" required min="0" #name="ngModel"/></p><br />
+
+        <input (click)="reset()" type="submit" value="RESET"/>
+        <input (click)="createProduct()" type="submit" value="CREATE"/>
+    </div>
+</form>

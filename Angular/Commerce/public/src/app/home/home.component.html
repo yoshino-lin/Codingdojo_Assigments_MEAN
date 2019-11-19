@@ -1,0 +1,25 @@
+<h1>Product List</h1>
+<button [routerLink]="['/products/new']">Add New Product</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let each_product of all_products_data_dic">
+            <td>{{each_product.index}}</td>
+            <td>{{each_product.name}}</td>
+            <td>{{each_product.qty}}</td>
+            <td>${{each_product.price}}</td>
+            <td>
+                <button [routerLink]="['/products/'+each_product.index+'/edit']">Edit</button>
+                <button [routerLink]="['/products/'+each_product.index]">Details</button>
+            </td>
+            </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<form>
+    <div class ="box">
+        <h4>Update Product</h4>
+        <p *ngIf="erroMessage.name" class="warning">{{erroMessage.name.message}}</p>
+        <p *ngIf="erroMessage.qty" class="warning">{{erroMessage.qty.message}}</p>
+        <p *ngIf="erroMessage.price" class="warning">{{erroMessage.price.message}}</p>
+
+        <p>Name</p> <input type="text" name="newProduct.name" [(ngModel)]="newProduct.name" required minlength="3" #name="ngModel" value="{{newProduct.name}}"/><br />
+        <p>Qty</p> <input type="text" name="newProduct.qty" [(ngModel)]="newProduct.qty" required min="0" #name="ngModel" value="{{newProduct.qty}}"/><br />
+        <p>Price</p> <input type="text" name="newProduct.price" [(ngModel)]="newProduct.price" required min="0" #name="ngModel" value="{{newProduct.price}}"/><br />
+
+        <input (click)="getThisProductInfo()" type="submit" value="RESET"/>
+        <input *ngIf="check_is_true()" (click)="updateThisProduct()" type="submit" value="UPDATE"/>
+    </div>
+</form>
