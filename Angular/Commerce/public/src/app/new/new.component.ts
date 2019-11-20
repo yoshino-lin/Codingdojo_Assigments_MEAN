@@ -23,14 +23,18 @@ export class NewComponent implements OnInit {
     createProduct(){
         let observable1 = this._httpService.getProductsInfo()
         observable1.subscribe((arr:any) => {
-            for(var i=0;i<arr.length;i++){
-                for(var a=i+1;a<arr.length;a++){
-                    if(arr[i]["index"]<arr[a]["index"]){
-                        [arr[i],arr[a]]=[arr[a],arr[i]]
+            if(arr.length>0){
+                for(var i=0;i<arr.length;i++){
+                    for(var a=i+1;a<arr.length;a++){
+                        if(arr[i]["index"]<arr[a]["index"]){
+                            [arr[i],arr[a]]=[arr[a],arr[i]]
+                        }
                     }
                 }
+                this.newProduct["index"] = arr[0]["index"]+1
+            }else{
+                this.newProduct["index"] = 0
             }
-            this.newProduct["index"] = arr[0]["index"]+1
             let observable = this._httpService.newProduct(this.newProduct)
             observable.subscribe(data => {
                 if(data["errors"]){
