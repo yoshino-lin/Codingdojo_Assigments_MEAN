@@ -1,0 +1,39 @@
+cd C:\Program Files\MongoDB\Server\4.2\bin
+mongod.exe
+npm init -y
+cd C:\Users\Administrator\Documents\GitHub\Codingdojo_Assigments_MEAN\Angular
+nodemon server.js
+
+#创建
+npm init -y
+npm install express --save
+ng new public --skip-git --routing
+ng build --watch
+ng g s http
+
+ng generate component 名字
+
+#部署时要删掉.gitignore文件
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/Commerce /etc/nginx/sites-enabled/Commerce
+
+cd /var/www
+sudo chown -R ubuntu 
+
+cd {{repo name}}
+npm install
+cd {{angular project name, we usually call it public}}
+npm install
+ng build
